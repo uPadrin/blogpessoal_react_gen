@@ -3,7 +3,7 @@ function Home() {
         <>
             <div id="container"
                 className="
-                bg-gray-900 
+                bg-gray-900 h
                 flex 
                 justify-center
                 ">
