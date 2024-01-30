@@ -4,6 +4,7 @@ import Tema from "../../../models/Tema";
 import { useContext, useEffect, useState } from "react";
 import { buscar, deletar } from "../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
+import { ToastAlerta } from "../../../utils/ToastAlerts";
 
 
 
@@ -26,7 +27,7 @@ function DeletarTema() {
             })
         } catch (error: any) {
             if (error.toString().includes("403")) {
-                alert("O token Expirou!")
+                ToastAlerta("O token Expirou!" , 'erro')
                 handleLogout()
             }
         }
@@ -34,7 +35,7 @@ function DeletarTema() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado!")
+            ToastAlerta("Você precisa estar logado!", 'erro')
             navigate("/login")
         }
     }, [token])
@@ -57,13 +58,13 @@ function DeletarTema() {
             await deletar(`/temas/${id}`, {
                 headers: { Authorization: token }
             })
-            alert("Tema foi excluído com sucesso!")
+            ToastAlerta("Tema foi excluído com sucesso!" , 'sucesso')
         } catch (error: any) {
             if (error.toString().includes("403")) {
-                alert("O Token Expirou!")
+                ToastAlerta("O Token Expirou!", 'erro')
                 handleLogout();
             } else {
-                alert("Erro ao excluir tema")
+                ToastAlerta("Erro ao excluir tema" , 'erro')
             }
         }
 
