@@ -21,15 +21,15 @@ function NavBar() {
         navbarComponent = (
             <div className='w-full bg-gray-900 text-white flex justify-center py-4'>
                 <div className="container flex justify-between text-lg">
-                    <Link to="/home" className='text-2xl font-bold uppercase'>Blog Pessoal </Link>
+                    <Link to="/home" className='text-2xl font-semibold uppercase'>Blog Pessoal </Link>
 
 
                     <div className='flex gap-4'>
-                        <Link to="/postagens" className='font-semibold'>Postagens</Link>
-                        <Link to="/temas" className='font-semibold'>Temas</Link>
-                        <Link to="/cadastroTema" className='font-semibold'>Cadastrar tema</Link>
-                        <Link to="/perfil" className='font-semibold'>Perfil</Link>
-                        <Link to="" onClick={logout} className='font-semibold'>Sair</Link>
+                        <Link to="/postagens" className='font-medium'>Postagens</Link>
+                        <Link to="/temas" className='font-medium'>Temas</Link>
+                        <Link to="/cadastroTema" className='font-medium'>Cadastrar tema</Link>
+                        <Link to="/perfil" className='font-medium'>Perfil</Link>
+                        <Link to="" onClick={logout} className='font-medium'>Sair</Link>
                     </div>
                 </div>
             </div>
